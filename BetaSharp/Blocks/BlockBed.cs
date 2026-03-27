@@ -111,8 +111,8 @@ public class BlockBed : Block
         {
             int direction = getDirection(meta);
             int sideFacing = Facings.BED_FACINGS[direction][faceString2Int(side)];
-            return isHeadOfBed(meta) ?
-             faceInt2String(sideFacing) : $"{textureId}_head_{faceInt2String(sideFacing)}" ;
+            string bedPart = isHeadOfBed(meta) ? "head" : "foot";
+            return $"{textureId}_{bedPart}_{faceInt2String(sideFacing)}";
 
         }
     }

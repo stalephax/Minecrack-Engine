@@ -450,8 +450,8 @@ public class Block
     {
         return (orig) switch
         {
-            "top" => 0,
-            "bottom"=>1 ,
+            "bottom" => 0,
+            "top" => 1,
             "north"=> 2,
             "south" => 3,
             "west" => 4,
