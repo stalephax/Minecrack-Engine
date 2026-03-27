@@ -11,7 +11,7 @@ public class BlockDoor : Block
 {
     public BlockDoor(int id, Material material) : base(id, material)
     {
-        textureId = "door_wood";
+        textureId = material == Material.Metal ? "door_iron" : "door_wood";
         
 
         float halfWidth = 0.5F;
@@ -28,7 +28,7 @@ public class BlockDoor : Block
             {
                 int textureIndex = facing / 2 + (faceString2Int(side) & 1 ^ facing);
                 textureIndex += (meta & 4) / 4;
-                string metaprefix = ((meta & 4) / 4) == 1 ? "lower" : "upper";
+                string metaprefix = (meta & 8) != 0 ? "upper" : "lower";
                 string textureId = $"{base.textureId}_{metaprefix}";
 
 
